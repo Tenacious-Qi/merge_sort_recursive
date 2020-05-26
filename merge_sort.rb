@@ -3,10 +3,8 @@
 def merge_sort(array)
   return array if array.size < 2
 
-  left = array[0...(array.size / 2)]
-  right = array[(array.size / 2)...array.size]
-  left = merge_sort(left)
-  right = merge_sort(right)
+  left = merge_sort(array[0...(array.size / 2)])
+  right = merge_sort(array[(array.size / 2)...array.size])
   merge(left, right, [])
 end
 
